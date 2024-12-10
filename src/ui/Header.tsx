@@ -20,8 +20,12 @@ import GroupIcon from "@mui/icons-material/Group";
 import ContrastIcon from "@mui/icons-material/Contrast";
 import MenuIcon from "@mui/icons-material/Menu";
 import { themes } from "../RootLayout";
+import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages: { text: string, link: string }[] = [
+  { text: "groups", link: "/groups" },
+  { text: "settings", link: "/settings" }
+];
 
 type Header = {
   themeChange: (theme: string) => void;
@@ -63,7 +67,6 @@ export default function Header({ themeChange }: Header) {
               variant="h5"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -112,8 +115,10 @@ export default function Header({ themeChange }: Header) {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                    <Typography sx={{ textAlign: "center" }}>
+                      <Link to={page.link}>{page.text}</Link>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -123,11 +128,11 @@ export default function Header({ themeChange }: Header) {
             <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
+                  key={page.text}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  <Link to={page.link}>{page.text}</Link>
                 </Button>
               ))}
             </Box>

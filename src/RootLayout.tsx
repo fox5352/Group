@@ -4,6 +4,8 @@ import { Outlet } from "react-router-dom";
 
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import Box from "@mui/material/Box";
+
 import { christmasTheme, darkTheme, lightTheme } from "./lib/theme.ts";
 
 import Header from "./ui/Header.tsx";
@@ -36,9 +38,10 @@ export default function RootLayout() {
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <Header themeChange={handleThemeChange} />
-      <main>
+
+      <Box component="main" maxWidth="xl" sx={{ marginX: "auto" }}>
         <Outlet />
-      </main>
+      </Box>
     </ThemeProvider>
   );
 }

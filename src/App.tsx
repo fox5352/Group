@@ -9,6 +9,7 @@ import "./App.css";
 
 import RootLayout from "./RootLayout";
 import Home from "./pages/Home";
+import NotFound from "./pages/Notfound";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

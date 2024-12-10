@@ -90,9 +90,4 @@ export const christmasTheme = createTheme({
       secondary: "#495057", // Subtle grey for secondary text
     },
   },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: { color: "#E63946" }, // Red for headings
-    h2: { color: "#48C774" }, // Green for subheadings
-  },
 });
