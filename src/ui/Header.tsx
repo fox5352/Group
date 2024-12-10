@@ -70,9 +70,9 @@ export default function Header({ themeChange }: Header) {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "white",
                 textDecoration: "none",
               }}
+              color="secondary"
             >
               GroupGoals
             </Typography>

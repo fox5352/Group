@@ -85,6 +85,10 @@ export const christmasTheme = createTheme({
       default: "#F8F9FA", // Snowy white background
       paper: "#ffffff", // Bright white for elevated surfaces
     },
+    text: {
+      primary: "#1B1B1B", // Dark text for readability
+      secondary: "#495057", // Subtle grey for secondary text
+    },
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
